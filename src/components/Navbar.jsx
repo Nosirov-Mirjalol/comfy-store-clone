@@ -1,18 +1,30 @@
 import Navlinks from "./Navlinks";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { IoMoonOutline,IoSunnyOutline } from "react-icons/io5";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="bg-base-200">
       <div className="navbar align-element">
-        <div className="navbar-start">
+        <div className="hidden lg:block lg:navbar-start">
           <Link to={"/"} className="btn btn-primary text-2xl">
             C
           </Link>
         </div>
-        <div className="navbar-center">
+        <div className="navbar-start dropdown lg:hidden">
+          <RxHamburgerMenu tapIndex={0} className="btn" />
+          <ul tapIndex={0} className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+            <li>
+              <a>Item 1</a>
+            </li>
+            <li>
+              <a>Item 2</a>
+            </li>
+          </ul>
+        </div>
+        <div className="hidden lg:navbar-center lg:block">
           <ul className="menu list-none menu-horizontal gap-3">
             <Navlinks />
           </ul>
@@ -28,7 +40,7 @@ const Navbar = () => {
               />
 
               {/* sun icon */}
-              <IoMoonOutline className="swap-off h-6 w-6 fill-current" /> 
+              <IoMoonOutline className="swap-off h-6 w-6 fill-current" />
 
               {/* moon icon */}
               <IoSunnyOutline className="swap-on h-6 w-6 fill-current" />
