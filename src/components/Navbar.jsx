@@ -13,16 +13,13 @@ const Navbar = () => {
             C
           </Link>
         </div>
-        <div className="navbar-start dropdown lg:hidden">
-          <RxHamburgerMenu className="btn" />
-          <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-          </ul>
+        <div className="navbar-start lg:hidden">
+          <details className="dropdown">
+            <summary className="btn m-1"><RxHamburgerMenu className="w-5 h-5" /></summary>
+            <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+              <Navlinks />
+            </ul>
+          </details>
         </div>
         <div className="hidden lg:navbar-center lg:block">
           <ul className="menu list-none menu-horizontal gap-3">
