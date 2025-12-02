@@ -1,12 +1,14 @@
 @import "tailwindcss";
-@plugin "daisyui";
-
-@layer components{
-    .align-element{
-        @apply mx-auto max-w-6xl
-    }
+@plugin "daisyui" {
+  themes: dracula,winter;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .align-element {
+    @apply mx-auto max-w-6xl;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }

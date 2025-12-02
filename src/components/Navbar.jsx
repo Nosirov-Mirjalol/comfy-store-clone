@@ -14,8 +14,8 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-start dropdown lg:hidden">
-          <RxHamburgerMenu tapIndex={0} className="btn" />
-          <ul tapIndex={0} className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+          <RxHamburgerMenu className="btn" />
+          <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
             <li>
               <a>Item 1</a>
             </li>
