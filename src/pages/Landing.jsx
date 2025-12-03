@@ -1,8 +1,9 @@
 const Landing = () => {
   return (
-    <h3>
-      Landing
-    </h3>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }
 
