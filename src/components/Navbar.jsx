@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-base-200">
+    <nav className="bg-base-200 mb-20">
       <div className="navbar align-element">
         <div className="hidden lg:block lg:navbar-start">
           <Link to={"/"} className="btn btn-primary text-2xl">
