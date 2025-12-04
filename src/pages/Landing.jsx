@@ -27,7 +27,7 @@ const Landing = () => {
           ))}
         </div>
         <button className="hidden lg:block lg:btn font-normal absolute bottom-[100px] right-[290px] glass text-black ">
-          <Link to={'./products'}>OUR PRODUCTS</Link>
+          <Link to={"./products"}>OUR PRODUCTS</Link>
         </button>
       </div>
     </>
