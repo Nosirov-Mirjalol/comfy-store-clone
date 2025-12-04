@@ -3,7 +3,7 @@ import { hero1, hero2, hero3, hero4 } from "../assets/image";
 const Landing = () => {
   const images = [hero1, hero2, hero3, hero4];
   return (
-    <div className="flex flex-col gap-5 lg:grid-cols-2 lg:pt-8 lg:flex-row px-6 md:px-10">
+    <div className="flex flex-col gap-x-10 lg:grid-cols-2 lg:pt-8 lg:flex-row px-6 md:px-10">
       <div className="w-full lg:w-[50%]">
         <h2 className="text-4xl md:text-6xl font-semibold">
           We are changing the way people shop
@@ -13,7 +13,7 @@ const Landing = () => {
           repellat explicabo enim soluta temporibus asperiores aut obcaecati
           perferendis porro nobis.
         </p>
-        <button className="btn btn-primary">OUR PRODUCTS</button>
+        <button className="btn btn-primary font-normal">OUR PRODUCTS</button>
       </div>
       <div className="hidden lg:flex lg:carousel carousel-center bg-neutral rounded-box max-w-md space-x-4 p-4">
         {images.map((item) => (
