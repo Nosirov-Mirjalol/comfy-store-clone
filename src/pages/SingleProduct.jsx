@@ -1,9 +1,19 @@
-const SingleProduct = () => {
-  return (
-    <h3>
-      SingleProduct
-    </h3>
-  )
-}
+const singleProductQuery = (id) => {
+  return {
+    queryKey: ["singleProduct", id],
+    queryFn: () => customFetch(`/products/${id}`),
+  };
+};
 
-export default SingleProduct
+export const loader =(queryClient) => async ({ params }) => {
+    const response = await queryClient.ensureQueryData(
+      singleProductQuery(params.id)
+    );
+
+    return { product: response.data.data };
+  };
+const SingleProduct = () => {
+  return <h3>SingleProduct</h3>;
+};
+
+export default SingleProduct;
