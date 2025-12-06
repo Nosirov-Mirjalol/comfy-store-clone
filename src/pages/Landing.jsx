@@ -13,7 +13,6 @@ export const loader =(queryClient)=> async () => {
 	return { products }
 
 }
-
 const Landing = () => {
 	return (
 		<>

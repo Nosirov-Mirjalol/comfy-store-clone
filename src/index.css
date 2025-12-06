@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: dracula,winter,dark,luxury;
+  themes: dracula,winter,dark;
 }
 
 @layer components {
