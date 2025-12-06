@@ -12,8 +12,19 @@ import {
   Register,
 } from "./pages/index";
 import { Router, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+// loaders
+import { loader as landingLoader } from './pages/Landing'
 
 const App = () => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 1000 * 60 * 5,
+      },
+    },
+  });
   const router = createBrowserRouter([
     {
       path: "/",
@@ -23,6 +34,7 @@ const App = () => {
         {
           index: true,
           element: <Landing />,
+          loader: landingLoader(queryClient)
         },
         {
           path: "/products",
