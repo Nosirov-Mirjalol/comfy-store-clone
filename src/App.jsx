@@ -17,6 +17,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 // loaders
 import { loader as landingLoader } from './pages/Landing'
 import { loader as SingleProductLoader } from './pages/SingleProduct'
+import { loader as ProductLoader } from './pages/Products'
 import { ErrorElement } from "./components";
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         {
           path: "/products",
           element: <Products />,
+          loader:ProductLoader(queryClient)
         },
         {
           path: "/products/:id",

@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router'
 import ProductsGrid from './ProductsGrid'
-import ProductsList from './ProductsList'
+import ProductsList from './ProductList'
 import { useState } from 'react'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 
