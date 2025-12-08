@@ -3,8 +3,8 @@ const FormSelect = ({ label, name, list, defaultValue, size }) => {
     <fieldset className="fieldset">
       <legend className="fieldset-legend">{label}</legend>
       <select defaultValue={defaultValue} className={`select ${size}`} >
-        {list.map(item=>{
-          return <option value={name} key={name} >{item}</option>
+        {list.map((item,inx)=>{
+          return <option value={name} key={inx} >{item}</option>
         })}
       </select>
     </fieldset>
