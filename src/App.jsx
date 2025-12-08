@@ -42,6 +42,7 @@ const App = () => {
         {
           path: "/products",
           element: <Products />,
+          errorElement:<ErrorElement />,
           loader:ProductLoader(queryClient)
         },
         {
