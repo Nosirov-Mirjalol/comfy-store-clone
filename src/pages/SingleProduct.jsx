@@ -43,9 +43,9 @@ const SingleProduct = () => {
         </ul>
       </div>
       <div className="card mt-7 grid lg:grid-cols-2 gap-x-10">
-        <div className="">
+        <div>
           <img
-            className="w-full lg:w-[700px] rounded-2xl"
+            className="w-full max-h-1/2 object-cover bg-center lg:w-[700px] rounded-2xl"
             src={image}
             alt="image"
           />
