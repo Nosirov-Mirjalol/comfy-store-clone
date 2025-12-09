@@ -12,6 +12,7 @@ const FormRange = ({ label, name, size }) => {
         <span>{formatPrice(selectedPrice)}</span>
       </label>
       <input
+        name={name}
         type="range"
         className={`range range-secondary ${size}`}
         step={step}
