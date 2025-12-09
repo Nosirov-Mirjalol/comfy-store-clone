@@ -34,7 +34,8 @@ const SingleProduct = () => {
     company,
     price,
     title,
-    productColor
+    productColor,
+    amount
   };
   const dispatch = useDispatch();
   const addToCart=()=>{

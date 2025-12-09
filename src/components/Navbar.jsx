@@ -7,7 +7,6 @@ import {useSelector} from 'react-redux'
 
 const Navbar = () => {
   const numItemInCart = useSelector((state) => state.cartState.numItemInCart)
-  console.log(numItemInCart);
   
   return (
     <nav className="bg-base-200 mb-20">

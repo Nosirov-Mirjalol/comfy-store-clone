@@ -19,7 +19,7 @@ const cartSlice=createSlice({
 			const item = state.cartItem.find((i) => i.cartID === product.cartID)
 
 			if (item) {
-				item.amount += product.amount
+				item.amount = +product.amount
 			} else {
 				state.cartItem.push(product)
 			}
