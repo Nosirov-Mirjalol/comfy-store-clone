@@ -3,8 +3,12 @@ import { RiShoppingCartLine } from "react-icons/ri";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import {useSelector} from 'react-redux'
 
 const Navbar = () => {
+  const numItemInCart = useSelector((state) => state.cartState.numItemInCart)
+  console.log(numItemInCart);
+  
   return (
     <nav className="bg-base-200 mb-20">
       <div className="navbar align-element">
@@ -47,7 +51,7 @@ const Navbar = () => {
             <div className="indicator">
               <RiShoppingCartLine className="w-5 h-5" />
               <span className="badge badge-xs badge-primary indicator-item">
-                2
+                {numItemInCart}
               </span>
             </div>
           </Link>
