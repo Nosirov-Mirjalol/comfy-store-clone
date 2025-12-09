@@ -16,7 +16,7 @@ const Filter = () => {
       <FormSelect defaultValue={order} label="Sort by" name={"order"} size={"select-sm rounded-lg"} list={["a-z","z-a","high","low"]}  />
       {/* range */}
       <FormRange label={'Select Price'} name={'price'} size={'range-sm'} />
-      <FormCheckbox label={"Free Shipping"} size={'checkbox-sm'} defaultValue={false} name={'Shipping'} />
+      <FormCheckbox name={"shipping"} label={"Free Shipping"} size={'checkbox-sm'} defaultValue={false} />
       {/* Buttons */}
       <button type="submit" className="btn btn-primary btn-sm rounded-lg">SEARCH</button>
       <Link to={"/products"} className="btn btn-secondary rounded-lg btn-sm">RESET</Link>
