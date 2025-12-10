@@ -12,16 +12,18 @@ import {
   Register,
 } from "./pages/index";
 import { Router, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { store } from "./store";
 
 // loaders
-import { loader as landingLoader } from './pages/Landing'
-import { loader as SingleProductLoader } from './pages/SingleProduct'
-import { loader as ProductLoader } from './pages/Products'
+import { loader as landingLoader } from "./pages/Landing";
+import { loader as SingleProductLoader } from "./pages/SingleProduct";
+import { loader as ProductLoader } from "./pages/Products";
 import { ErrorElement } from "./components";
 
 // actions
-import { action as registerAction } from './pages/Register'
+import { action as registerAction } from "./pages/Register";
+import { action as LoginAction } from "./pages/Login";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -40,19 +42,19 @@ const App = () => {
         {
           index: true,
           element: <Landing />,
-          loader: landingLoader(queryClient)
+          loader: landingLoader(queryClient),
         },
         {
           path: "/products",
           element: <Products />,
-          errorElement:<ErrorElement />,
-          loader:ProductLoader(queryClient)
+          errorElement: <ErrorElement />,
+          loader: ProductLoader(queryClient),
         },
         {
           path: "/products/:id",
           element: <SingleProduct />,
-          errorElement:<ErrorElement/>,
-          loader: SingleProductLoader(queryClient)
+          errorElement: <ErrorElement />,
+          loader: SingleProductLoader(queryClient),
         },
         {
           path: "/cart",
@@ -76,15 +78,20 @@ const App = () => {
       path: "/login",
       element: <Login />,
       errorElement: <Error />,
+      action: LoginAction(store),
     },
     {
       path: "/register",
       element: <Register />,
       errorElement: <Error />,
-      action: registerAction
+      action: registerAction,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 };
 
 export default App;

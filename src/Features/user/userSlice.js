@@ -3,13 +3,13 @@ import { toast } from 'sonner'
 
 const themes = {
 	winter: 'winter',
-	dracula: 'dracula'
+	dark: 'dark'
 }
 const getUserFromLocalStorage = () => {
 	return JSON.parse(localStorage.getItem('user')) || null
 }
 const getThemeFromLocalStorage = () => {
-	const theme = localStorage.getItem('theme') || themes.winter
+	const theme = localStorage.getItem('theme') || themes.dark
 	document.documentElement.setAttribute('data-theme', theme)
 	return theme
 }
