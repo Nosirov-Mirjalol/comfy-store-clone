@@ -20,6 +20,9 @@ import { loader as SingleProductLoader } from './pages/SingleProduct'
 import { loader as ProductLoader } from './pages/Products'
 import { ErrorElement } from "./components";
 
+// actions
+import { action as registerAction } from './pages/Register'
+
 const App = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -78,6 +81,7 @@ const App = () => {
       path: "/register",
       element: <Register />,
       errorElement: <Error />,
+      action: registerAction
     },
   ]);
   return <RouterProvider router={router} />;

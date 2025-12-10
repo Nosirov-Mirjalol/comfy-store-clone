@@ -1,19 +1,40 @@
-import { FormInput, Submitbtn } from "../components/index";
-import { Link } from "react-router-dom";
+import { FormInput, Submitbtn } from '../components'
+import { Form, Link, redirect } from 'react-router'
+import { customFetch } from '../utils'
+import { toast } from 'sonner'
 
+export const action = async ({ request }) => {
+	const formData = await request.formData()
+	const data = Object.fromEntries(formData)
+	try {
+		const response = await customFetch.post('/auth/local/register', data)
+		toast.success('account created succesfully')
+		return redirect('/login')
+	} catch (error) {
+		console.log(error)
+
+		const errorMessage = error?.response?.data?.error?.message||'please double check your credintials '
+		toast.error(errorMessage)
+		return null
+	}
+}
 const Register = () => {
-  return (
-    <section className="flex justify-center items-center min-h-screen">
-      <div className="w-[350px] card shadow-2xl p-3">
-        <h2 className="text-3xl font-semibold text-center p-2">Register</h2>
-        <FormInput type={"text"} label={"Username"} />
-        <FormInput type={"email"} label={"Email"} />
-        <FormInput type={"password"} label={"Password"} />
-        <Submitbtn text={"Login"} />
-        <p className="text-center text-[14px] py-1 pt-3">Alredy a member? <Link className="link link-primary ml-2" to={"/login"}>Login</Link></p>
-      </div>
-    </section>
-  )
+	return (
+		<section className='h-screen grid place-items-center'>
+			<Form method='POST' className='card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-2'>
+				<h4 className='text-center text-3xl font-bold'>Register</h4>
+				<FormInput type='text' label='username' name='username' />
+				<FormInput type='email' label='email' name='email' />
+				<FormInput type='password' label='password' name='password' />
+				<div className='mt-2'>
+					<Submitbtn size={"w-full"} text='register' />
+				</div>
+				<p className='text-center'>
+					Already a member? <Link to={'/login'} className='ml-2 link link-hover link-primary capitalize ' >login</Link>
+				</p>
+			</Form>
+		</section>
+	)
 }
 
 export default Register

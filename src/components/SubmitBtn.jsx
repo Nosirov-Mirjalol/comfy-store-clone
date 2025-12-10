@@ -1,6 +1,6 @@
-const SubmitBtn = ({text}) => {
+const SubmitBtn = ({text,size}) => {
   return (
-    <button className="btn btn-soft btn-primary my-2 ">{text}</button>
+    <button className={`btn btn-soft btn-primary my-2 ${size}`}>{text}</button>
   )
 }
 
