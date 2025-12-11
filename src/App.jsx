@@ -65,7 +65,7 @@ const App = () => {
         {
           path: "/checkout",
           element: <Checkout />,
-          loader: CheckoutLoader(queryClient),
+          loader: CheckoutLoader(store),
           action: CheckoutAction(store,queryClient)
         },
         {
