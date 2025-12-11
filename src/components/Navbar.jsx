@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import {useSelector} from 'react-redux'
 
 const Navbar = () => {
-  const numItemInCart = useSelector((state) => state.cartState.numItemInCart)
+  const numItemInCart = useSelector((state) => state.cartState.numItemsInCart)
   
   return (
     <nav className="bg-base-200 mb-20">
