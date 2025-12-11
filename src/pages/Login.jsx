@@ -2,7 +2,7 @@ import { Form, Link, redirect, useNavigate } from 'react-router'
 import { FormInput, Submitbtn } from '../components'
 import { customFetch } from '../utils'
 import { toast } from 'sonner'
-import { loginUser } from '../features/user/userSlice'
+import { loginUser } from '../Features/user/userSlice'
 import { useDispatch } from 'react-redux'
 
 export const action =

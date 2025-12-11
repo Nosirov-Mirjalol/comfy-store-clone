@@ -34,8 +34,8 @@ const userSlice = createSlice({
 			toast.success("Logged out successfully")
 		},
 		toggleTheme: (state) => {
-			const { dracula, winter } = themes
-			state.theme = state.theme === dracula ? winter : dracula
+			const { dark, winter } = themes
+			state.theme = state.theme === dark ? winter : dark
 			document.documentElement.setAttribute('data-theme', state.theme)
 			localStorage.setItem('theme', state.theme)
 		},
@@ -43,4 +43,5 @@ const userSlice = createSlice({
 })
 
 export const { logoutUser, loginUser, toggleTheme } = userSlice.actions
+console.log(userSlice)
 export default userSlice.reducer
