@@ -20,6 +20,7 @@ import { loader as landingLoader } from "./pages/Landing";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
 import { loader as ProductLoader } from "./pages/Products";
 import { loader as CheckoutLoader } from "./pages/Checkout";
+import { loader as ordersLoader } from "./pages/Orders";
 import { ErrorElement } from "./components";
 
 // actions
@@ -66,7 +67,7 @@ const App = () => {
           path: "/checkout",
           element: <Checkout />,
           loader: CheckoutLoader(store),
-          action: CheckoutAction(store,queryClient)
+          action: CheckoutAction(store, queryClient),
         },
         {
           path: "/about",
@@ -75,6 +76,7 @@ const App = () => {
         {
           path: "/orders",
           element: <Orders />,
+          loader: ordersLoader(store, queryClient),
         },
       ],
     },
