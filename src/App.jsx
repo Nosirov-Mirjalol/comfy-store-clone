@@ -19,11 +19,13 @@ import { store } from "./store";
 import { loader as landingLoader } from "./pages/Landing";
 import { loader as SingleProductLoader } from "./pages/SingleProduct";
 import { loader as ProductLoader } from "./pages/Products";
+import { loader as CheckoutLoader } from "./pages/Checkout";
 import { ErrorElement } from "./components";
 
 // actions
 import { action as registerAction } from "./pages/Register";
 import { action as LoginAction } from "./pages/Login";
+import { action as CheckoutAction } from "./components/ChekoutForm";
 
 const App = () => {
   const queryClient = new QueryClient({
@@ -63,6 +65,8 @@ const App = () => {
         {
           path: "/checkout",
           element: <Checkout />,
+          loader: CheckoutLoader(queryClient),
+          action: CheckoutAction(store,queryClient)
         },
         {
           path: "/about",
