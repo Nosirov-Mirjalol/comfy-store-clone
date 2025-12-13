@@ -3,7 +3,7 @@ import FormInput from "./FormInput";
 import Submitbtn from "./SubmitBtn";
 import { customFetch, formatPrice } from "../utils";
 import { toast } from "sonner";
-import { clearCart } from "./features/cart/cartSlice";
+import { clearCart } from "../Features/Cart/CartSlice";
 
 export const action =
   (store, queryClient) =>
